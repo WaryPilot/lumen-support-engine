@@ -1,4 +1,3 @@
-# Stage 1: Build the React + TypeScript Admin Dashboard
 FROM node:22-bookworm-slim AS frontend-builder
 WORKDIR /frontend
 COPY dashboard/package*.json ./
@@ -6,7 +5,6 @@ RUN npm ci
 COPY dashboard ./
 RUN npm run build
 
-# Stage 2: Build Python + FastAPI + Poller Runtime
 FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim
 WORKDIR /app
 
