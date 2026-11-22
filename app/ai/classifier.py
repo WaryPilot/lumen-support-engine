@@ -5,7 +5,7 @@ from app.ai.schemas import TriageResult
 from app.config import settings
 
 _provider = GoogleProvider(api_key=settings.google_api_key or settings.gemini_api_key)
-_model = GoogleModel("gemini-2.5-flash-lite", provider=_provider)
+_model = GoogleModel("gemini-3.5-flash-lite", provider=_provider)
 
 triage_agent = Agent(
     _model,
